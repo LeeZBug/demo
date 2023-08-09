@@ -28,6 +28,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public BaseResult<String> handleException(Exception e) {
+        log.error(e.getMessage());
         return BaseResult.success(ResponseCode.FAIL.getCode(), e.getMessage());
     }
 }
