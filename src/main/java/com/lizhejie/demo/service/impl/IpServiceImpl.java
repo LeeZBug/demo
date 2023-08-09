@@ -27,7 +27,7 @@ public class IpServiceImpl implements IpService {
 
 
     @Override
-    public IpInfo get(String ip) {
+    public IpInfo geo(String ip) {
         Map<String,String> params = new HashMap<>();
         params.put("key",gaodeKey);
         params.put("ip",ip);
