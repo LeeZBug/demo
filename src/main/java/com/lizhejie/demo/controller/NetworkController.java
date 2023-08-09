@@ -31,6 +31,6 @@ public class NetworkController {
     }
     @PostMapping("/ipgeo")
     public BaseResult<IpInfo> geo(@RequestBody @Validated IpDto ipDto){
-        return BaseResult.success(ipService.get(ipDto.getIp()));
+        return BaseResult.success(ipService.geo(ipDto.getIp()));
     }
 }
