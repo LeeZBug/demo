@@ -1,7 +1,7 @@
 package com.lizhejie.demo.controller;
 
-import com.lizhejie.demo.model.IpInfo;
-import com.lizhejie.demo.model.ResolvDomain;
+import com.lizhejie.demo.model.vo.IpInfoVo;
+import com.lizhejie.demo.model.vo.ResolvDomainVo;
 import com.lizhejie.demo.model.base.BaseResult;
 import com.lizhejie.demo.model.dto.DomainDto;
 import com.lizhejie.demo.model.dto.IpDto;
@@ -26,11 +26,11 @@ public class NetworkController {
     private IpService ipService;
 
     @PostMapping("/resolv")
-    public BaseResult<List<ResolvDomain>> resolvdomain(@RequestBody @Validated DomainDto domainDto){
+    public BaseResult<List<ResolvDomainVo>> resolvdomain(@RequestBody @Validated DomainDto domainDto){
         return BaseResult.success(dnsResolvService.resolv(domainDto.getDomain()));
     }
     @PostMapping("/ipgeo")
-    public BaseResult<IpInfo> geo(@RequestBody @Validated IpDto ipDto){
+    public BaseResult<IpInfoVo> geo(@RequestBody @Validated IpDto ipDto){
         return BaseResult.success(ipService.geo(ipDto.getIp()));
     }
 }

@@ -20,5 +20,5 @@ public @interface Regex {
 
     Class<? extends Payload>[] payload() default {};
 
-    String message();
+    String message() default "不符合给定的正则表达式";
 }

@@ -1,7 +1,7 @@
 package com.lizhejie.demo.service;
 
-import com.lizhejie.demo.model.IpInfo;
+import com.lizhejie.demo.model.vo.IpInfoVo;
 
 public interface IpService {
-    IpInfo  geo(String ip);
+    IpInfoVo geo(String ip);
 }
